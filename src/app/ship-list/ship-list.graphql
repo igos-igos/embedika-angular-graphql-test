@@ -1,0 +1,8 @@
+query ships {
+  ships {
+    id
+    name
+    type
+    home_port
+  }
+}

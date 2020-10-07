@@ -1,0 +1,13 @@
+query shipDetails($id: ID!) {
+  ship(id: "HOLLYWOOD") {
+    name
+    type
+    year_built
+    home_port
+    weight_kg
+    missions {
+      name
+    }
+    image
+  }
+}
