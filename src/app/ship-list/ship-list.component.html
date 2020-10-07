@@ -1,1 +1,9 @@
-<p>ship-list works!</p>
+<ng-container *ngIf="shipList | async as shipList">
+  <main>
+    <ul>
+      <li *ngFor="let ship of shipList">
+        <span>{{ship.name}}</span>
+      </li>
+    </ul>
+  </main>
+</ng-container>

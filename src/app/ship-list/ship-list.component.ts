@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { map } from 'rxjs/operators'
+import { ShipsGQL } from '../services/spacexGraphql.service';
 
 @Component({
   selector: 'app-ship-list',
@@ -7,7 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShipListComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly shipListService: ShipsGQL) { }
+
+  shipList = this.shipListService
+    .fetch()
+    .pipe(
+      map(res => res.data)
+    )
 
   ngOnInit() {
   }
