@@ -1353,7 +1353,7 @@ export type ShipsQuery = (
 
 export const ShipDetailsDocument = gql`
     query shipDetails($id: ID!) {
-  ship(id: "HOLLYWOOD") {
+  ship(id: $id) {
     name
     type
     year_built
