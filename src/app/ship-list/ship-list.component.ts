@@ -11,10 +11,10 @@ export class ShipListComponent implements OnInit {
 
   constructor(private readonly shipListService: ShipsGQL) { }
 
-  shipList = this.shipListService
+  shipList$ = this.shipListService
     .fetch()
     .pipe(
-      map(res => res.data)
+      map(res => res.data.ships)
     )
 
   ngOnInit() {

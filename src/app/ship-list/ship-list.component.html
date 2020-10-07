@@ -1,8 +1,12 @@
-<ng-container *ngIf="shipList | async as shipList">
+<ng-container *ngIf="shipList$ | async as shipList">
   <main>
     <ul>
       <li *ngFor="let ship of shipList">
-        <span>{{ship.name}}</span>
+        <p><b>{{ship.name}}</b> <a [routerLink]="['/', ship.id]">open details</a></p>
+        <p>
+          <span>Тип</span> <span>{{ship.type}}</span>
+          <span>Порт</span> <span>{{ship.home_port}}</span>
+        </p>
       </li>
     </ul>
   </main>

@@ -1,0 +1,12 @@
+b {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+span {
+  display: inline-block;
+  margin-right: 5px;
+  &:nth-child(2n) {
+    margin-right: 30px;
+  }
+}
