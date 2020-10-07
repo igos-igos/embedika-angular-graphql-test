@@ -1,1 +1,13 @@
-<p>ship-details works!</p>
+<ng-container *ngIf="shipDetails$ | async as shipDetails">
+  <section>
+    <b>{{shipDetails.name}}</b>
+    <p><span>Тип:</span><span>{{shipDetails.type}}</span></p>
+    <p><span>Год постройки:</span><span>{{shipDetails.year_built}}</span></p>
+    <p><span>Порт:</span><span>{{shipDetails.home_port}}</span></p>
+    <p><span>Вес:</span><span>{{shipDetails.weight_kg}} кг</span></p>
+    <p><span>Миссии:</span>
+      <br>
+      <span *ngFor="let mission of shipDetails.missions">{{mission.name}}, </span></p>
+    <img src={{shipDetails.image}} width="600" height="600" alt="">
+  </section>
+</ng-container>

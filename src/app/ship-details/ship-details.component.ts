@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router'
+import { map, switchMap } from 'rxjs/operators'
+import { ShipDetailsGQL } from '../services/spacexGraphql.service';
 
 @Component({
   selector: 'app-ship-details',
@@ -7,7 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShipDetailsComponent implements OnInit {
 
-  constructor() { }
+  constructor(
+    private readonly route: ActivatedRoute,
+    private readonly shipDetailsService: ShipDetailsGQL
+  ) { }
+
+  shipDetails$ = this.route.paramMap.pipe(
+    switchMap(params => {
+      const id = params.get('id')
+      return this.shipDetailsService.fetch({id});
+    }),
+    map(res => res.data.ship)
+  )
 
   ngOnInit() {
   }
