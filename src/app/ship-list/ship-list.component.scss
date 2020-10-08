@@ -10,3 +10,15 @@ span {
     margin-right: 30px;
   }
 }
+
+.pagination {
+  display: flex;
+  &__btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    &:disabled {
+      cursor: default;
+    }
+  }
+}

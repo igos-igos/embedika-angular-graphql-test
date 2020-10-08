@@ -11,6 +11,8 @@ export class ShipListComponent implements OnInit {
 
   constructor(private readonly shipListService: ShipsGQL) { }
 
+  currentPage = 1
+
   shipList$ = this.shipListService
     .fetch()
     .pipe(
