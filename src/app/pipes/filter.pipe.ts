@@ -10,8 +10,8 @@ export class FilterPipe implements PipeTransform {
     if (!searchText) {
       return items;
     }
-    searchText = searchText.toLocaleLowerCase();
 
+    searchText = searchText.toLocaleLowerCase();
     return items.filter(it => {
       return it.name.toLocaleLowerCase().includes(searchText);
     });

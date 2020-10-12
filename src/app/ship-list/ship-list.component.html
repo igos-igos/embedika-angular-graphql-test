@@ -5,16 +5,16 @@
 
     <fieldset>
       <legend>Порт</legend>
-      <input type="checkbox" name="port" id="Port Canaveral" [(ngModel)]="searchPort[0]">
+      <input type="checkbox" id="Port Canaveral" name="Port Canaveral" [(ngModel)]="portList['Port Canaveral']">
       <label for="Port Canaveral">Port Canaveral</label>
-      <input type="checkbox" name="port" id="Port of Los Angeles" [(ngModel)]="searchPort[1]">
+      <input type="checkbox" id="Port of Los Angeles" name="Port of Los Angeles" [(ngModel)]="portList['Port of Los Angeles']">
       <label for="Port of Los Angeles">Port of Los Angeles</label>
-      <input type="checkbox" name="port" id="Fort Lauderdale" [(ngModel)]="searchPort[2]">
+      <input type="checkbox" id="Fort Lauderdale" name="Fort Lauderdale" [(ngModel)]="portList['Fort Lauderdale']">
       <label for="Fort Lauderdale">Fort Lauderdale</label>
     </fieldset>
 
     <ul>
-      <li *ngFor="let ship of shipList | appFilter: searchText | paginate: {itemsPerPage: 5, currentPage: currentPage}">
+      <li *ngFor="let ship of shipList | appFilter: searchText | checkboxFilter: portList | paginate: {itemsPerPage: 5, currentPage: currentPage}">
         <p><b>{{ship.name}}</b> <a [routerLink]="['/', ship.id]">open details</a></p>
         <p>
           <span>Тип</span> <span>{{ship.type}}</span>
