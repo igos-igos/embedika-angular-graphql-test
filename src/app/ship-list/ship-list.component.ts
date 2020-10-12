@@ -12,6 +12,12 @@ export class ShipListComponent implements OnInit {
   constructor(private readonly shipListService: ShipsGQL) { }
 
   currentPage = 1
+  searchText = ""
+  searchPort = [
+    'Port Canaveral',
+    'Port of Los Angeles',
+    'Fort Lauderdale'
+  ]
 
   shipList$ = this.shipListService
     .fetch()
