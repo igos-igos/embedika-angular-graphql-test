@@ -1,0 +1,21 @@
+:root {
+  --primary-color: rgba(0, 0, 0, 0.87);
+  --second-color:  #2962FF;
+}
+
+@mixin subText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin removeListStyle {
+  list-style: none;
+  padding-left: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: normal;
+  color: var(--primary-color);
+}
