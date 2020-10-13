@@ -1,12 +1,24 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'radioFilter'
+  name: 'radioFilter',
+  pure: false
 })
 export class RadioFilterPipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
-  }
+  transform(items: any[], radios: any): any[] {
+    if (!items) {
+      return [];
+    }
 
-}
+    if (
+      !radios
+      ) {
+      return items
+    }
+
+    return items.filter(ship => {
+      return ship.type.includes(radios);
+    });
+  }
+  }

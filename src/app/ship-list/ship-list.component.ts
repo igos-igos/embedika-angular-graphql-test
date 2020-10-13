@@ -13,12 +13,15 @@ export class ShipListComponent implements OnInit {
 
   currentPage = 1
   searchText = ""
+
   portList = {
     'Port Canaveral': false,
     'Port of Los Angeles': false,
     'Fort Lauderdale': false
 
   }
+
+  typeList: string = ''
 
   shipList$ = this.shipListService
     .fetch()
@@ -27,24 +30,7 @@ export class ShipListComponent implements OnInit {
     )
 
   ngOnInit() {
-    console.log(this.portList['Port Canaveral'])
+
   }
-
-  // clickEvent(event) {
-  //   if (event.target.checked === true) {
-
-  //     this.searchPort.push(event.target.id)
-
-  //     return this.searchPort
-
-
-  //   } else if (event.target.checked === false) {
-
-  //     this.searchPort = this.searchPort.filter(port => port !== event.target.id)
-
-  //     return this.searchPort
-  //   }
-
-  // }
 
 }

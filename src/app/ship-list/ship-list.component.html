@@ -5,16 +5,30 @@
 
     <fieldset>
       <legend>Порт</legend>
-      <input type="checkbox" id="Port Canaveral" name="Port Canaveral" [(ngModel)]="portList['Port Canaveral']">
+      <input type="checkbox" id="Port Canaveral" name="port" [(ngModel)]="portList['Port Canaveral']">
       <label for="Port Canaveral">Port Canaveral</label>
-      <input type="checkbox" id="Port of Los Angeles" name="Port of Los Angeles" [(ngModel)]="portList['Port of Los Angeles']">
+      <input type="checkbox" id="Port of Los Angeles" name="port" [(ngModel)]="portList['Port of Los Angeles']">
       <label for="Port of Los Angeles">Port of Los Angeles</label>
-      <input type="checkbox" id="Fort Lauderdale" name="Fort Lauderdale" [(ngModel)]="portList['Fort Lauderdale']">
+      <input type="checkbox" id="Fort Lauderdale" name="port" [(ngModel)]="portList['Fort Lauderdale']">
       <label for="Fort Lauderdale">Fort Lauderdale</label>
     </fieldset>
 
+    <fieldset>
+      <legend>Тип</legend>
+      <input type="radio" name="type" id="barge" value="Barge" [(ngModel)]="typeList">
+      <label for="barge">Barge</label>
+      <input type="radio" name="type" id="cargo" value="Cargo" [(ngModel)]="typeList">
+      <label for="cargo">Cargo</label>
+      <input type="radio" name="type" id="high speed craft" value="High Speed Craft" [(ngModel)]="typeList">
+      <label for="high speed craft">High Speed Craft</label>
+      <input type="radio" name="type" id="tug" value="Tug" [(ngModel)]="typeList">
+      <label for="tug">Tug</label>
+      <input type="radio" name="type" id="all" value="" [(ngModel)]="typeList">
+      <label for="all">All</label>
+    </fieldset>
+
     <ul>
-      <li *ngFor="let ship of shipList | appFilter: searchText | checkboxFilter: portList | paginate: {itemsPerPage: 5, currentPage: currentPage}">
+      <li *ngFor="let ship of shipList | appFilter: searchText | checkboxFilter: portList | radioFilter: typeList | paginate: {itemsPerPage: 5, currentPage: currentPage}">
         <p><b>{{ship.name}}</b> <a [routerLink]="['/', ship.id]">open details</a></p>
         <p>
           <span>Тип</span> <span>{{ship.type}}</span>
