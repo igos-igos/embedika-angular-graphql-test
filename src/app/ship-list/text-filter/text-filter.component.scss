@@ -1,0 +1,50 @@
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+}
+
+.title-filter-label,
+.title-filter {
+  transition: all 0.2s;
+}
+
+.title-filter-label {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.title-filter {
+  font-size: 16px;
+  line-height: 19px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.title-filter:focus {
+  outline: 0;
+  border-bottom: 1px solid var(--second-color);
+}
+
+.title-filter:placeholder-shown + .title-filter-label {
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: text;
+  transform-origin: left bottom;
+  transform: translate(0, 1.125rem) scale(.9);
+}
+
+::-webkit-input-placeholder {
+  transition: inherit;
+  opacity: 0;
+}
+
+.title-filter:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.title-filter:not(:placeholder-shown) + .title-filter-label,
+.title-filter:focus + .title-filter-label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}

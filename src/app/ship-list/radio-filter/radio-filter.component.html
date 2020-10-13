@@ -1,0 +1,25 @@
+<div>
+  <legend>Тип</legend>
+  <ul>
+    <li>
+      <input type="radio" name="type" id="barge" value="Barge" [(ngModel)]="filters.type">
+      <label for="barge">Barge</label>
+    </li>
+    <li>
+      <input type="radio" name="type" id="cargo" value="Cargo" [(ngModel)]="filters.type">
+      <label for="cargo">Cargo</label>
+    </li>
+    <li>
+      <input type="radio" name="type" id="high speed craft" value="High Speed Craft" [(ngModel)]="filters.type">
+      <label for="high speed craft">High Speed Craft</label>
+    </li>
+    <li>
+      <input type="radio" name="type" id="tug" value="Tug" [(ngModel)]="filters.type">
+      <label for="tug">Tug</label>
+    </li>
+    <li>
+      <input type="radio" name="type" id="all" value="" [(ngModel)]="filters.type">
+      <label for="all">All</label>
+    </li>
+  </ul>
+</div>

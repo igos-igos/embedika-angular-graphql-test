@@ -13,6 +13,9 @@ import { ShipDetailsComponent } from './ship-details/ship-details.component';
 import { FilterPipe } from './pipes/filter.pipe'
 import { CheckboxFilterPipe } from './pipes/checkbox-filter.pipe';
 import { RadioFilterPipe } from './pipes/radio-filter.pipe';
+import { TextFilterComponent } from './ship-list/text-filter/text-filter.component';
+import { CheckboxFilterComponent } from './ship-list/checkbox-filter/checkbox-filter.component';
+import { RadioFilterComponent } from './ship-list/radio-filter/radio-filter.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +24,10 @@ import { RadioFilterPipe } from './pipes/radio-filter.pipe';
     ShipDetailsComponent,
     FilterPipe,
     CheckboxFilterPipe,
-    RadioFilterPipe
+    RadioFilterPipe,
+    TextFilterComponent,
+    CheckboxFilterComponent,
+    RadioFilterComponent
   ],
   imports: [
     BrowserModule,

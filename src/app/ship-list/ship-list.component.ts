@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators'
+import { FiltersService } from '../services/filters.service';
 import { ShipsGQL } from '../services/spacexGraphql.service';
 
 @Component({
@@ -8,20 +9,21 @@ import { ShipsGQL } from '../services/spacexGraphql.service';
   styleUrls: ['./ship-list.component.scss']
 })
 export class ShipListComponent implements OnInit {
-
-  constructor(private readonly shipListService: ShipsGQL) { }
+  constructor(private readonly shipListService: ShipsGQL, private filters: FiltersService) { }
 
   currentPage = 1
-  searchText = ""
 
-  portList = {
-    'Port Canaveral': false,
-    'Port of Los Angeles': false,
-    'Fort Lauderdale': false
-
+  get searchText(): string {
+    return this.filters.searchText
   }
 
-  typeList: string = ''
+  get portList(): object {
+    return this.filters.portList
+  }
+
+  get type(): string {
+    return this.filters.type
+  }
 
   shipList$ = this.shipListService
     .fetch()

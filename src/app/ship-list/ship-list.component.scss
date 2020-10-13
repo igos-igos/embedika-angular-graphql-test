@@ -22,3 +22,45 @@ span {
     }
   }
 }
+
+fieldset {
+  border: none;
+  position: relative;
+}
+
+.main {
+  display: flex;
+  height: 100vh;
+  background-color: #e5e5e5;
+}
+
+.ship-list {
+  flex-grow: 1;
+}
+
+.title {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 32px;
+}
+
+.filters {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 17%;
+  flex-grow: 0;
+  padding: 52px 33px;
+  background-color: #ffffff;
+  border-left: 1px solid #a5a5a5;
+}
+
+.filters-title {
+  display: block;
+  margin-bottom: 22px;
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.text-filter {
+  margin-bottom: 40px;
+}
