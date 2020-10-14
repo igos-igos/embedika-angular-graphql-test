@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
+
 export class FiltersService {
 
   searchText: string = ""
@@ -11,8 +12,9 @@ export class FiltersService {
     'Port Canaveral': false,
     'Port of Los Angeles': false,
     'Fort Lauderdale': false
-
   }
+
+  checkboxCount: number = 0
 
   type: string = ''
 
