@@ -93,6 +93,12 @@
 
 .pagination {
   display: flex;
+
+  &__page-label {
+    display: inline-block;
+    margin: 0 23px;
+  }
+
   &__btn {
     background: transparent;
     border: none;
@@ -100,5 +106,12 @@
     &:disabled {
       cursor: default;
     }
+  }
+  &__btn--right {
+    transform: rotateY(180deg);
+  }
+
+  &__btn:disabled {
+    opacity: .3;
   }
 }
