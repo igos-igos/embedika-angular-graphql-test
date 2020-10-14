@@ -1,0 +1,100 @@
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+}
+
+.title-filter-label,
+.title-filter {
+  transition: all 0.2s;
+}
+
+.title-filter-label {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.title-filter {
+  font-size: 16px;
+  line-height: 23px;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.title-filter:focus {
+  outline: 0;
+  border-bottom: 1px solid var(--second-color);
+}
+
+.title-filter:placeholder-shown + .title-filter-label {
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: text;
+  transform-origin: left bottom;
+  transform: translate(0, 1.125rem) scale(.9);
+}
+
+::-webkit-input-placeholder {
+  transition: inherit;
+  opacity: 0;
+}
+
+.title-filter:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+
+.title-filter:not(:placeholder-shown) + .title-filter-label,
+.title-filter:focus + .title-filter-label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
+
+
+.input-list {
+  max-width: 100%;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+  padding: 15px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.23), 0px 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+.input-item {
+  margin-bottom: 14px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.checkbox {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    flex-grow: 0;
+    border: 2px solid #4f4f4f;
+    border-radius: 0.25em;
+    margin-right: 10px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 50% 50%;
+  }
+}
+
+.checkbox:checked + .checkbox-label::before {
+  border-color: var(--second-color);
+  background-color: var(--second-color);
+  background-image: url("~src/assets/icons/check-mark.svg");
+  background-size: 12px 12px;
+}

@@ -1,16 +1,57 @@
 <div>
-  <ul>
-    <li>
-      <input type="checkbox" id="Port Canaveral" name="port" [(ngModel)]="filters.portList['Port Canaveral']">
-      <label for="Port Canaveral">Port Canaveral</label>
+  <div class="field">
+    <input
+      autocomplete="off"
+      class="title-filter"
+      id="checkbox-count"
+      type="text"
+      placeholder=" "
+      value="Выбраны {{checkboxCount}}"
+    >
+    <label class="title-filter-label" for="checkbox-count">Порт</label>
+  </div>
+  <ul class="input-list">
+    <li class="input-item">
+      <input
+        class="checkbox"
+        type="checkbox"
+        id="Port Canaveral"
+        name="port"
+        [(ngModel)]="filters.portList['Port Canaveral']"
+        (click)="toggleCheckboxCount($event)"
+      >
+      <label
+        class="checkbox-label"
+        for="Port Canaveral">Port Canaveral
+    </label>
     </li>
-    <li>
-      <input type="checkbox" id="Port of Los Angeles" name="port" [(ngModel)]="filters.portList['Port of Los Angeles']">
-      <label for="Port of Los Angeles">Port of Los Angeles</label>
+    <li class="input-item">
+      <input
+        class="checkbox"
+        type="checkbox"
+        id="Port of Los Angeles"
+        name="port"
+        [(ngModel)]="filters.portList['Port of Los Angeles']"
+        (click)="toggleCheckboxCount($event)"
+      >
+      <label
+        class="checkbox-label"
+        for="Port of Los Angeles">Port of Los Angeles
+    </label>
     </li>
-    <li>
-      <input type="checkbox" id="Fort Lauderdale" name="port" [(ngModel)]="filters.portList['Fort Lauderdale']">
-      <label for="Fort Lauderdale">Fort Lauderdale</label>
+    <li class="input-item">
+      <input
+        class="checkbox"
+        type="checkbox"
+        id="Fort Lauderdale"
+        name="port"
+        [(ngModel)]="filters.portList['Fort Lauderdale']"
+        (click)="toggleCheckboxCount($event)"
+      >
+      <label
+        class="checkbox-label"
+        for="Fort Lauderdale">Fort Lauderdale
+    </label>
     </li>
   </ul>
 </div>
