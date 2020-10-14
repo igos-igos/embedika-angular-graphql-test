@@ -1,15 +1,22 @@
 <ng-container *ngIf="shipList$ | async as shipList">
   <main class="main">
     <section class="ship-list">
-      <h1>SpaceX Ships</h1>
-      <ul>
-        <li
+      <h1 class="title">SpaceX Ships</h1>
+      <ul class="list">
+        <li class="item"
           *ngFor="let ship of shipList | appFilter: searchText | checkboxFilter: portList | radioFilter: type | paginate: {itemsPerPage: 5, currentPage: currentPage}">
-          <p><b>{{ship.name}}</b> <a [routerLink]="['/', ship.id]">open details</a></p>
           <p>
-            <span>Тип</span> <span>{{ship.type}}</span>
-            <span>Порт</span> <span>{{ship.home_port}}</span>
+            <b class="ship-name">{{ship.name}}</b>
+            <a [routerLink]="['/', ship.id]">
+              <img src="assets/icons/link-arrow.svg" alt="Стрелочка, повернутая вправо">
+            </a>
           </p>
+          <ul class="option-list">
+            <li class="option"><span class="option-name">Тип</span>
+              <span class="option-value">{{ship.type}}</span></li>
+            <li class="option"><span class="option-name">Порт</span>
+              <span class="option-value">{{ship.home_port}}</span></li>
+          </ul>
         </li>
       </ul>
 
