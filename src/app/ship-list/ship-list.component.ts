@@ -11,6 +11,9 @@ import { ShipsGQL } from '../services/spacexGraphql.service';
 export class ShipListComponent implements OnInit {
   constructor(private readonly shipListService: ShipsGQL, private filters: FiltersService) { }
 
+  openMenu = false
+  openShipList = true
+
   currentPage = 1
 
   get searchText(): string {
@@ -33,6 +36,11 @@ export class ShipListComponent implements OnInit {
 
   ngOnInit() {
 
+  }
+
+  toggleMenu() {
+    this.openMenu = !this.openMenu
+    this.openShipList = !this.openShipList
   }
 
 }

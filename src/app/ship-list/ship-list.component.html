@@ -1,7 +1,16 @@
 <ng-container *ngIf="shipList$ | async as shipList">
   <main class="main">
-    <section class="ship-list">
-      <h1 class="title">SpaceX Ships</h1>
+    <button
+          class="toggle-filters-btn"
+          [class.is-filters-open]="openMenu"
+          (click)="!toggleMenu()"
+        >
+          &Xi;
+        </button>
+    <section class="ship-list" [class.open-ship-list]="!openShipList">
+      <div>
+        <h1 class="title">SpaceX Ships</h1>
+      </div>
       <ul class="list">
         <li class="item"
           *ngFor="let ship of shipList | appFilter: searchText | checkboxFilter: portList | radioFilter: type | paginate: {itemsPerPage: 5, currentPage: currentPage}">
@@ -45,7 +54,7 @@
       </pagination-template>
     </section>
 
-    <section class="filters">
+    <section class="filters" [class.open-filters]="openMenu">
       <span class="filters-title">Фильтры</span>
       <app-text-filter class="text-filter"></app-text-filter>
       <app-checkbox-filter class="checkbox-filter"></app-checkbox-filter>
