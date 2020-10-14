@@ -16,6 +16,7 @@ import { RadioFilterPipe } from './pipes/radio-filter.pipe';
 import { TextFilterComponent } from './ship-list/text-filter/text-filter.component';
 import { CheckboxFilterComponent } from './ship-list/checkbox-filter/checkbox-filter.component';
 import { RadioFilterComponent } from './ship-list/radio-filter/radio-filter.component';
+import { AddCommaPipe } from './pipes/add-comma.pipe';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RadioFilterComponent } from './ship-list/radio-filter/radio-filter.comp
     RadioFilterPipe,
     TextFilterComponent,
     CheckboxFilterComponent,
-    RadioFilterComponent
+    RadioFilterComponent,
+    AddCommaPipe
   ],
   imports: [
     BrowserModule,

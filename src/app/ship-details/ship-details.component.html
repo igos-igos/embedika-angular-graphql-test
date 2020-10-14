@@ -22,21 +22,22 @@
       </li>
       <li class="option">
         <span class="option-name">Вес</span>
-        <span class="option-value">{{shipDetails.weight_kg}} кг</span>
+        <span *ngIf="shipDetails.weight_kg; else noData" class="option-value">{{shipDetails.weight_kg}}кг</span>
       </li>
       <li class="option">
         <span class="option-name">Год</span>
-        <span class="option-value">{{shipDetails.year_built}}</span>
+        <span *ngIf="shipDetails.year_built; else noData" class="option-value">{{shipDetails.year_built}}</span>
       </li>
     </ul>
     <span class="mission-title">Миссии</span>
     <ul class="mission-list">
-      <li *ngFor="let mission of shipDetails.missions">
+      <li *ngFor="let mission of shipDetails.missions | addComma">
         <span class="mission-name">
-        {{mission.name}},&nbsp;
+        {{mission}}&nbsp;
       </span></li>
     </ul>
     <img
+      *ngIf="shipDetails.year_built; else null"
       class="ship-img"
       src={{shipDetails.image}}
       width="600"
@@ -46,3 +47,7 @@
     >
   </section>
 </ng-container>
+
+<ng-template #noData>
+  <span>Не указано</span>
+</ng-template>
