@@ -32,7 +32,7 @@
     <span class="mission-title">Миссии</span>
     <ul class="mission-list">
       <li *ngFor="let mission of shipDetails.missions | addComma">
-        <span class="mission-name">
+        <span *ngIf="mission; else noData" class="mission-name">
         {{mission}}&nbsp;
       </span></li>
     </ul>
