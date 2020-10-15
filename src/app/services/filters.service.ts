@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 
 export class FiltersService {
 
-  searchText: string = ""
+  searchText = ""
 
   portList: object = {
     'Port Canaveral': false,
@@ -14,9 +14,9 @@ export class FiltersService {
     'Fort Lauderdale': false
   }
 
-  checkboxCount: number = 0
+  checkboxCount = 0
 
-  type: string = ''
+  type = ""
 
   constructor() { }
 }

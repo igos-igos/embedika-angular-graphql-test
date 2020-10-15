@@ -8,7 +8,7 @@ export class CheckboxFilterPipe implements PipeTransform {
 
   transform(items: any[], checkboxes: any): any[] {
     if (!items) {
-      return [];
+      return []
     }
 
     if (!checkboxes['Port Canaveral'] && !checkboxes['Port of Los Angeles'] && !checkboxes['Fort Lauderdale']) {
@@ -17,11 +17,11 @@ export class CheckboxFilterPipe implements PipeTransform {
 
 
     return items.filter(ship =>
-      (checkboxes['Port Canaveral'] && ship.home_port == "Port Canaveral")
+      (checkboxes['Port Canaveral'] && ship.home_port === 'Port Canaveral')
       ||
-      (checkboxes['Port of Los Angeles'] && ship.home_port == "Port of Los Angeles")
+      (checkboxes['Port of Los Angeles'] && ship.home_port === 'Port of Los Angeles')
       ||
-      (checkboxes['Fort Lauderdale'] && ship.home_port == "Fort Lauderdale")
+      (checkboxes['Fort Lauderdale'] && ship.home_port === 'Fort Lauderdale')
     )
   }
 
