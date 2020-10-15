@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/embedika-angular-graphql-test",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
