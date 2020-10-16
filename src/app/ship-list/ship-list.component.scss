@@ -82,6 +82,7 @@
   flex-direction: column;
   flex-basis: 17%;
   flex-grow: 0;
+  min-height: calc(100vh - 104px);
   padding: 52px 33px;
   background-color: #ffffff;
   border-left: 1px solid #a5a5a5;
