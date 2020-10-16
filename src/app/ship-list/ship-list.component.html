@@ -1,6 +1,7 @@
 <ng-container *ngIf="shipList$ | async as shipList">
   <main class="main">
     <button
+          title="Открыть меню с фильтрами."
           class="toggle-filters-btn"
           [class.is-filters-open]="openMenu"
           (click)="toggleMenu()"
@@ -14,12 +15,14 @@
           <img src="assets/icons/github-logo.svg" alt="Иконка Github.">
         </a>
       </div>
+
       <ul class="list">
         <li class="item"
-          *ngFor="let ship of shipList | appFilter: searchText | checkboxFilter: portList | radioFilter: type | paginate: {itemsPerPage: 5, currentPage: currentPage}">
+          *ngFor="let ship of shipList | appFilter: searchText | checkboxFilter: portList | radioFilter: type | paginate: {itemsPerPage: 5, currentPage: pagination.currentPage}"
+          >
           <p>
             <b class="ship-name">{{ship.name}}</b>
-            <a [routerLink]="['/', ship.id]">
+            <a [routerLink]="['/', ship.id]" title="Карточка корабля {{ship.name}}.">
               <img src="assets/icons/link-arrow.svg" alt="Стрелочка, повернутая вправо">
             </a>
           </p>
@@ -30,17 +33,19 @@
               <span class="option-value">{{ship.home_port}}</span></li>
           </ul>
         </li>
-      </ul>
 
+      </ul>
       <pagination-template
         class="pagination"
         #p="paginationApi"
-        (pageChange)="currentPage = $event">
+        (pageChange)="pagination.currentPage = $event">
         <button
+          title="Предыдущая страница."
+          type="button"
           class="pagination__btn"
           [disabled]="p.isFirstPage()"
           (click)="p.previous()">
-          <img src="assets/icons/pagination-arrow.svg" alt="Стрелочка, повернутая влево">
+          <img src="assets/icons/pagination-arrow.svg" alt="Стрелочка, повернутая влево.">
         </button>
         <div *ngFor="let page of p.pages">
           <div *ngIf="p.getCurrent() === page.value">
@@ -48,11 +53,13 @@
           </div>
         </div>
         <button
+          title="Следующая страница."
+          type="button"
           class="pagination__btn pagination__btn--right"
           [disabled]="p.isLastPage()"
           (click)="p.next()"
         >
-          <img src="assets/icons/pagination-arrow.svg" alt="Стрелочка, повернутая вправо">
+          <img src="assets/icons/pagination-arrow.svg" alt="Стрелочка, повернутая вправо.">
       </button>
       </pagination-template>
     </section>
@@ -66,3 +73,7 @@
 
   </main>
 </ng-container>
+
+<ng-template #noData>
+  <span>no data</span>
+</ng-template>
