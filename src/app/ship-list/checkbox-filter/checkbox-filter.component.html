@@ -19,6 +19,7 @@
         id="Port Canaveral"
         name="port"
         [(ngModel)]="filters.portList['Port Canaveral']"
+        (ngModelChange)="pagination.currentPage = 1"
         (click)="toggleCheckboxCount($event)"
       >
       <label
@@ -33,6 +34,7 @@
         id="Port of Los Angeles"
         name="port"
         [(ngModel)]="filters.portList['Port of Los Angeles']"
+        (ngModelChange)="pagination.currentPage = 1"
         (click)="toggleCheckboxCount($event)"
       >
       <label
@@ -47,6 +49,7 @@
         id="Fort Lauderdale"
         name="port"
         [(ngModel)]="filters.portList['Fort Lauderdale']"
+        (ngModelChange)="pagination.currentPage = 1"
         (click)="toggleCheckboxCount($event)"
       >
       <label

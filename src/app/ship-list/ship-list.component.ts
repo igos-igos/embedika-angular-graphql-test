@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { map } from 'rxjs/operators'
 import { FiltersService } from '../services/filters.service';
+import { PaginationService } from '../services/pagination.service';
 import { ShipsGQL } from '../services/spacexGraphql.service';
 
 @Component({
@@ -9,12 +10,14 @@ import { ShipsGQL } from '../services/spacexGraphql.service';
   styleUrls: ['./ship-list.component.scss']
 })
 export class ShipListComponent implements OnInit {
-  constructor(private readonly shipListService: ShipsGQL, private filters: FiltersService) { }
+  constructor(
+    private readonly shipListService: ShipsGQL,
+    private filters: FiltersService,
+    public pagination: PaginationService
+    ) { }
 
   openMenu = false
   openShipList = true
-
-  currentPage = 1
 
   get searchText(): string {
     return this.filters.searchText

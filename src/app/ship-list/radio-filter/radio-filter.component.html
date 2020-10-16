@@ -9,6 +9,7 @@
         id="barge"
         value="Barge"
         [(ngModel)]="filters.type"
+        (ngModelChange)="pagination.currentPage = 1"
       >
       <label class="radio-label" for="barge">Barge</label>
     </li>
@@ -20,6 +21,7 @@
         id="cargo"
         value="Cargo"
         [(ngModel)]="filters.type"
+        (ngModelChange)="pagination.currentPage = 1"
       >
       <label class="radio-label" for="cargo">Cargo</label>
     </li>
@@ -31,6 +33,7 @@
         id="high speed craft"
         value="High Speed Craft"
         [(ngModel)]="filters.type"
+        (ngModelChange)="pagination.currentPage = 1"
       >
       <label class="radio-label" for="high speed craft">High Speed Craft</label>
     </li>
@@ -42,6 +45,7 @@
         id="tug"
         value="Tug"
         [(ngModel)]="filters.type"
+        (ngModelChange)="pagination.currentPage = 1"
       >
       <label class="radio-label" for="tug">Tug</label>
     </li>
@@ -52,6 +56,7 @@
         name="type"
         id="all" value=""
         [(ngModel)]="filters.type"
+        (ngModelChange)="pagination.currentPage = 1"
       >
       <label class="radio-label" for="all">All</label>
     </li>

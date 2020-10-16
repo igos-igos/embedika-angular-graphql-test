@@ -3,7 +3,9 @@
     autocomplete="off"
     class="title-filter"
     id="title-filter"
-    type="text" [(ngModel)]="filters.searchText"
+    type="text"
+    [(ngModel)]="filters.searchText"
+    (ngModelChange)="pagination.currentPage = 1"
     placeholder=" "
   >
   <label class="title-filter-label" for="title-filter">Название</label>
