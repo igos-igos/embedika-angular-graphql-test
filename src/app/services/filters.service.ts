@@ -13,6 +13,7 @@ export class FiltersService {
     'Port of Los Angeles': false,
     'Fort Lauderdale': false
   }
+  isOpen = false
 
   checkboxCount = 0
 

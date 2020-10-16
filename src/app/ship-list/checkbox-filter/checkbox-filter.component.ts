@@ -23,4 +23,8 @@ export class CheckboxFilterComponent implements OnInit {
       this.filters.checkboxCount -= 1
     }
   }
+
+  toggleFilters() {
+    this.filters.isOpen = !this.filters.isOpen
+  }
 }

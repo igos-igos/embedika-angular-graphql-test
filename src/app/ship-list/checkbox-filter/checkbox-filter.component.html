@@ -8,10 +8,11 @@
       type="text"
       placeholder=" "
       value="Выбраны {{filters.checkboxCount}}"
+      (click)="toggleFilters()"
     >
     <label class="title-filter-label" for="checkbox-count">Порт</label>
   </div>
-  <ul class="input-list">
+  <ul class="input-list" [class.open]="filters.isOpen">
     <li class="input-item">
       <input
         class="checkbox"

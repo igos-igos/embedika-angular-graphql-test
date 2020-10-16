@@ -17,6 +17,7 @@
   line-height: 23px;
   border: 0;
   border-bottom: 1px solid var(--second-color);
+  cursor: pointer;
 }
 
 .title-filter:focus {
@@ -49,7 +50,6 @@
   cursor: pointer;
 }
 
-
 .input-list {
   max-width: 100%;
   list-style: none;
@@ -57,6 +57,7 @@
   padding-left: 0;
   padding: 15px;
   box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.23), 0px 3px 6px rgba(0, 0, 0, 0.16);
+  display: none;
 }
 
 .input-item {
@@ -97,4 +98,8 @@
   background-color: var(--second-color);
   background-image: url("~src/assets/icons/check-mark.svg");
   background-size: 12px 12px;
+}
+
+.open {
+  display: block;
 }
